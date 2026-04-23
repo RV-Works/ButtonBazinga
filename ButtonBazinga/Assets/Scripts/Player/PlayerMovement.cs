@@ -25,7 +25,6 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 direction = moveInput.x * transform.right + moveInput.y * transform.forward;
-        Debug.Log(moveInput);
         rb.AddForce(direction * playerSpeed, ForceMode.VelocityChange);
     }
 
