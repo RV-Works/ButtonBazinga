@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -30,7 +31,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-       
+        OnDeath();
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -54,6 +55,14 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+        }
+    }
+
+    private void OnDeath() 
+    {
+    if (gameObject.CompareTag("Water"))
+        {
+            SceneManager.LoadScene("YOUDIED");
         }
     }
 }
