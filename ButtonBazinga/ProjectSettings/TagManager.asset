@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - Grapple surface
   layers:
   - Default
   - TransparentFX
