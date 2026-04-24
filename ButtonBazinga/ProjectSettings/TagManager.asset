@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Ground
   - Grapple surface
+  - OutsideWorld
+  - Water
   layers:
   - Default
   - TransparentFX
