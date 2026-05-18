@@ -8,6 +8,7 @@ TagManager:
   - Grapple surface
   - OutsideWorld
   - Water
+  - Jumppad
   layers:
   - Default
   - TransparentFX
