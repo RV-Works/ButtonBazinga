@@ -1,12 +1,14 @@
-using System.Collections;
-using System.Runtime.CompilerServices;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private GameObject Win;
     [SerializeField] private GameObject StartGame;
+    [SerializeField] private TextMeshProUGUI coinText;
+    [SerializeField] private int coinCounter;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -24,6 +26,12 @@ public class GameManager : MonoBehaviour
         {
             StartGame.IsDestroyed();
         }
+    }
+
+    private void CoinCounter() 
+    {
+        coinCounter++;
+        coinText.text = coinCounter.ToString();
     }
 
 }

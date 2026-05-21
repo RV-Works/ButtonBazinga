@@ -216,12 +216,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a23f8f9761ebca54eb6e1e222615075a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerMovement
-  playerSpeed: 1
+  playerSpeed: 181.41
   isGrounded: 1
   jumpHeight: 8
   groundCheckDistance: 0.35
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
   maxGroundSlopeAngle: 55
   fallGravityMultiplier: 20
