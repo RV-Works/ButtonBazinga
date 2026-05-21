@@ -3,18 +3,15 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
-{
+{                                               
+
     [SerializeField] private Transform mapRoot;
     [SerializeField] private float mapRotationSpeedDegreesPerSecond = 90f;
-
     [SerializeField] private bool lockPlayerHorizontalPosition = true;
-
     private Rigidbody rb;
     private Vector2 moveInput;
     private Vector3 lockedPlayerPosition;
-
     public bool isGrounded;
-
     [SerializeField] private int jumpHeight;
     [SerializeField] private float groundCheckDistance = 0.35f;
     [SerializeField] private float maxGroundSlopeAngle = 55f;
@@ -33,6 +30,9 @@ public class PlayerMovement : MonoBehaviour
     {
         RotateMapOnZ();
 
+// rotating the world changes the contact angles under the player,
+        // and they can get tiny sideways velocities from collisions.
+        // Locking X/Z keeps the vibe: “player stays put, world spins”.
         if (lockPlayerHorizontalPosition)
         {
             LockPlayerHorizontalPosition();
@@ -61,7 +61,6 @@ public class PlayerMovement : MonoBehaviour
             rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
             isGrounded = false;
         }
-        else { return; }
     }
 
     private void RotateMapOnZ()
@@ -71,28 +70,30 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
 
+
         float angle = moveInput.x * mapRotationSpeedDegreesPerSecond * Time.fixedDeltaTime;
         if (Mathf.Approximately(angle, 0f))
         {
             return;
         }
-
-
+        // pressing right rotates the WORLD left, so it feels like the player is turning right.
         mapRoot.Rotate(0f, 0f, -angle, Space.Self);
     }
 
     private void LockPlayerHorizontalPosition()
     {
+        
+      
         Vector3 pos = rb.position;
         pos.x = lockedPlayerPosition.x;
         pos.z = lockedPlayerPosition.z;
         rb.MovePosition(pos);
-
         ZeroPlayerHorizontalVelocity();
     }
 
     private void ZeroPlayerHorizontalVelocity()
     {
+        //  we only kill X/Z so jump/fall (Y) still works.
         Vector3 v = rb.linearVelocity;
         v.x = 0f;
         v.z = 0f;
