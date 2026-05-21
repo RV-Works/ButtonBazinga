@@ -8,5 +8,17 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SampleScene.unity
     guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/StartingScreen.unity
+    guid: a754fec00124af34282f2f48334b0358
+  - enabled: 1
+    path: Assets/Scenes/Main scene.unity
+    guid: 4f1c1202630925f47ae069e11ff72fb7
+  - enabled: 1
+    path: Assets/Scenes/Thnx for demp.unity
+    guid: 31f2f728e6336b94a98a0f2165361a30
+  - enabled: 1
+    path: Assets/Scenes/YOUDIED.unity
+    guid: 93b48e646938b964c930261791d48235
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

@@ -10,7 +10,6 @@ public class PlayerMovement : MonoBehaviour
     public bool isGrounded;
     [SerializeField] private int jumpHeight;
     [SerializeField] private float groundCheckDistance = 0.35f;
-    [SerializeField] private LayerMask groundMask = ~0;
     [SerializeField] private float maxGroundSlopeAngle = 55f;
 
     [SerializeField] private float fallGravityMultiplier = 20f;
@@ -26,20 +25,25 @@ public class PlayerMovement : MonoBehaviour
     private void FixedUpdate()
     {
         Vector3 direction = moveInput.x * transform.right + moveInput.y * transform.forward;
+        direction.y = 0f;
+
         rb.AddForce(direction * playerSpeed, ForceMode.VelocityChange);
+
+        if (rb.useGravity && rb.linearVelocity.y < 0f)
+        {
+            rb.AddForce(Physics.gravity * (fallGravityMultiplier - 1f), ForceMode.Acceleration);
+        }
     }
 
     private void Update()
     {
-        OnDeath();
+        
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
     }
-
-
 
     public void OnJump(InputAction.CallbackContext context)
     {
@@ -50,19 +54,22 @@ public class PlayerMovement : MonoBehaviour
         }
         else { return; }
     }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
         }
+
+        if (collision.gameObject.CompareTag("Water"))
+        {
+            OnDeath();
+        }
     }
 
-    private void OnDeath() 
+    private void OnDeath()
     {
-    if (gameObject.CompareTag("Water"))
-        {
-            SceneManager.LoadScene("YOUDIED");
-        }
+        SceneManager.LoadScene("YOUDIED");
     }
 }
