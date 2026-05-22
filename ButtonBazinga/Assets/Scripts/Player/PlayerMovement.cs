@@ -93,7 +93,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void ZeroPlayerHorizontalVelocity()
     {
-        //  we only kill X/Z so jump/fall (Y) still works.
         Vector3 v = rb.linearVelocity;
         v.x = 0f;
         v.z = 0f;
