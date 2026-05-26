@@ -1,6 +1,7 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
@@ -33,5 +34,11 @@ public class GameManager : MonoBehaviour
         coinCounter++;
         coinText.text = coinCounter.ToString();
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player")) {
+        SceneManager.LoadScene("Thnx for demp");
+        }
 
+    }
 }
