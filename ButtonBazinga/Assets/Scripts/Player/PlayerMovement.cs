@@ -114,6 +114,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDeath()
     {
-        SceneManager.LoadScene("YOUDIED");
+        SceneManager.LoadScene("You lost");
     }
 }
