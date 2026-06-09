@@ -5,6 +5,11 @@ TagManager:
   serializedVersion: 3
   tags:
   - Ground
+  - Grapple surface
+  - OutsideWorld
+  - Water
+  - Jumppad
+  - Coin
   layers:
   - Default
   - TransparentFX
