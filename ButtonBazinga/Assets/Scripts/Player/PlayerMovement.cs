@@ -77,7 +77,7 @@ public class PlayerMovement : MonoBehaviour
             return;
         }
         // pressing right rotates the WORLD left, so it feels like the player is turning right.
-        mapRoot.Rotate(0f, 0f, -angle, Space.Self);
+        mapRoot.Rotate(0f, 0f, angle, Space.Self);
     }
 
     private void LockPlayerHorizontalPosition()
@@ -114,6 +114,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnDeath()
     {
-        SceneManager.LoadScene("YOUDIED");
+        SceneManager.LoadScene("You lost");
     }
 }

@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private void CoinCounter() 
+    public void CoinCounter() 
     {
         coinCounter++;
         coinText.text = coinCounter.ToString();
