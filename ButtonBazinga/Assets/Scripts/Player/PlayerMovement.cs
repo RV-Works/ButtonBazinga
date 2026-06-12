@@ -72,12 +72,19 @@ public class PlayerMovement : MonoBehaviour
         moveInput = new Vector2(x, 0f);
     }
 
+    public System.Action onJumpEvent;
+
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (isGrounded == true)
+        if (context.performed)
         {
-            rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
-            isGrounded = false;
+            onJumpEvent?.Invoke();
+
+            if (isGrounded == true)
+            {
+                rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+                isGrounded = false;
+            }
         }
     }
 

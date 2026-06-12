@@ -26,6 +26,8 @@ public class Zipline : MonoBehaviour
                 playerRb = other.GetComponent<Rigidbody>();
                 initialPlayerFixedPos = playerRb.position;
 
+                player.onJumpEvent += OnPlayerJumped;
+
                 // Determine direction based on proximity
                 bool goingToEnd = true;
                 if (Vector3.Distance(playerRb.position, endPoint.position) < Vector3.Distance(playerRb.position, startPoint.position))
@@ -64,6 +66,25 @@ public class Zipline : MonoBehaviour
         }
     }
 
+    private void OnPlayerJumped()
+    {
+        if (isRiding)
+        {
+            EndRide();
+        }
+    }
+
+    private void EndRide()
+    {
+        isRiding = false;
+        playerRb.useGravity = true;
+        player.isGrappling = false;
+        if (player != null)
+        {
+            player.onJumpEvent -= OnPlayerJumped;
+        }
+    }
+
     private void Update()
     {
         if (isRiding && player != null)
@@ -93,9 +114,10 @@ public class Zipline : MonoBehaviour
 
             if (finished)
             {
-                isRiding = false;
-                playerRb.useGravity = true;
-                player.isGrappling = false;
+                // do not auto-end ride
+                // isRiding = false;
+                // playerRb.useGravity = true;
+                // player.isGrappling = false;
             }
         }
     }
