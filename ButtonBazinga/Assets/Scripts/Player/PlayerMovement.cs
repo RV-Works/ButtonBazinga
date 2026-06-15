@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UIElements;
 
 public class PlayerMovement : MonoBehaviour
 {                                               
@@ -19,11 +20,19 @@ public class PlayerMovement : MonoBehaviour
 
     private CapsuleCollider capsuleCollider;
 
+    [SerializeField] private Transform playerVisual;
+    public bool isGrappling = false;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
         capsuleCollider = GetComponent<CapsuleCollider>();
         lockedPlayerPosition = transform.position;
+    }
+
+    private void Update()
+    {
+        OnKeyDown();
     }
 
     private void FixedUpdate()
@@ -32,17 +41,26 @@ public class PlayerMovement : MonoBehaviour
 
 // rotating the world changes the contact angles under the player,
         // and they can get tiny sideways velocities from collisions.
-        // Locking X/Z keeps the vibe: “player stays put, world spins”.
-        if (lockPlayerHorizontalPosition)
+             //yes i fucking wrote this myself before you think my comments are Ai generated. >:/
+        if (!isGrappling)
         {
-            LockPlayerHorizontalPosition();
-        }
-        else
-        {
-            ZeroPlayerHorizontalVelocity();
+            if (lockPlayerHorizontalPosition)
+            {
+                LockPlayerHorizontalPosition();
+            }
+            else
+            {
+                ZeroPlayerHorizontalVelocity();
+            }
         }
 
-        if (rb.useGravity && rb.linearVelocity.y < 0f)
+        if (isGrappling && rb.linearVelocity.y < 0f)
+        {
+            Vector3 v = rb.linearVelocity;
+            v.y = 0f;
+            rb.linearVelocity = v;
+        }
+        else if (rb.useGravity && rb.linearVelocity.y < 0f && !isGrappling)
         {
             rb.AddForce(Physics.gravity * (fallGravityMultiplier - 1f), ForceMode.Acceleration);
         }
@@ -63,6 +81,14 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
+    public void RotateMap(float angle)
+    {
+        if (mapRoot != null)
+        {
+            mapRoot.Rotate(0f, 0f, angle, Space.Self);
+        }
+    }
+
     private void RotateMapOnZ()
     {
         if (mapRoot == null)
@@ -76,7 +102,6 @@ public class PlayerMovement : MonoBehaviour
         {
             return;
         }
-        // pressing right rotates the WORLD left, so it feels like the player is turning right.
         mapRoot.Rotate(0f, 0f, angle, Space.Self);
     }
 
@@ -115,5 +140,23 @@ public class PlayerMovement : MonoBehaviour
     private void OnDeath()
     {
         SceneManager.LoadScene("You lost");
+    }
+
+    private void OnKeyDown()
+    { 
+        if (playerVisual == null) return;
+
+        if (Keyboard.current.dKey.isPressed)
+        {
+            playerVisual.localRotation = Quaternion.Euler(0f, 90f, 0f);
+        }
+        else if (Keyboard.current.aKey.isPressed)
+        {
+            playerVisual.localRotation = Quaternion.Euler(0f, -90f, 0f);
+        }
+        else
+        {
+            playerVisual.localRotation = Quaternion.Euler(0f, 180f, 0f);
+        }
     }
 }
