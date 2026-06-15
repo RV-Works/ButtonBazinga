@@ -196,6 +196,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1051774286855050108, guid: 62c55c39b4817e44aae3b53069b6ae1c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: ed5a19c539d46de429762f9e30ab6a75, type: 2}
     - target: {fileID: 1556094088016376489, guid: 62c55c39b4817e44aae3b53069b6ae1c, type: 3}
       propertyPath: m_Name
       value: thetree
@@ -240,6 +244,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8970789710740434736, guid: 62c55c39b4817e44aae3b53069b6ae1c, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 10687b5a3da55854db8ca48d31f8db3f, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 6348837037854539193, guid: 62c55c39b4817e44aae3b53069b6ae1c, type: 3}
