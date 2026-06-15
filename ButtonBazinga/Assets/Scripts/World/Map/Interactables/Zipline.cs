@@ -114,10 +114,10 @@ public class Zipline : MonoBehaviour
 
             if (finished)
             {
-                // do not auto-end ride
-                // isRiding = false;
-                // playerRb.useGravity = true;
-                // player.isGrappling = false;
+
+                isRiding = false;
+                playerRb.useGravity = true;
+                player.isGrappling = false;
             }
         }
     }
