@@ -50,3 +50,4 @@ public class Pausescreen : MonoBehaviour
         isPaused = true;
     }
 }
+ 
