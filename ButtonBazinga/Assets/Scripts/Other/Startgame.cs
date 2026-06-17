@@ -14,4 +14,12 @@ public class Startgame : MonoBehaviour
     {
         Application.Quit();
     }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            StartGame();
+        }
+    }
 }
