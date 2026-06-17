@@ -1,7 +1,9 @@
+using System;
 using UnityEngine;
 
 public class Needle : MonoBehaviour
 {
+    [SerializeField] private GameObject RainDrops;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +21,7 @@ public class Needle : MonoBehaviour
         {
             Destroy(gameObject);
             FindAnyObjectByType<Rain>().StartRain();
+            RainDrops.SetActive(true);
         }
         
     }
