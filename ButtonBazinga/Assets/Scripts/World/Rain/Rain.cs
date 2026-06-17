@@ -7,7 +7,7 @@ public class Rain : MonoBehaviour
     [SerializeField] private float acceleration = 0.05f;
 
     private float currentSpeed;
-    private bool isRising;
+    [SerializeField] private bool isRising;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()

@@ -27,9 +27,8 @@ public class GameManager : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            //start rain from the Rain Script
+
             FindAnyObjectByType<Rain>().StartRain();
-            StartGame.SetActive(false);
         }
     }
 
