@@ -1160,24 +1160,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20fffb7a745cb1e4c83a48c19db02c0b, type: 3}
---- !u!1 &1669138403 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8051480763957294183, guid: 03e1e7cab88d246479e21fe57746561a, type: 3}
-  m_PrefabInstance: {fileID: 3438694726170349671}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1669138406
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1669138403}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cc815b63b7332d43bb49dfb6bbe998d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Pausescreen
-  pauseMenuUI: {fileID: 387503978}
 --- !u!1 &1685423173
 GameObject:
   m_ObjectHideFlags: 0
@@ -1705,13 +1687,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameManager
       objectReference: {fileID: 0}
+    - target: {fileID: 8759878901019979119, guid: 03e1e7cab88d246479e21fe57746561a, type: 3}
+      propertyPath: pauseMenuUI
+      value: 
+      objectReference: {fileID: 387503978}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8051480763957294183, guid: 03e1e7cab88d246479e21fe57746561a, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1669138406}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03e1e7cab88d246479e21fe57746561a, type: 3}
 --- !u!1001 &4490646340632409107
 PrefabInstance:

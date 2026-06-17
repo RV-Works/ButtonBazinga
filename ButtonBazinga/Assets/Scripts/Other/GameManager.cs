@@ -19,13 +19,17 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+       
+        GetComponent<Rain>();
+        
     }
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            StartGame.IsDestroyed();
+            //start rain from the Rain Script
+            FindAnyObjectByType<Rain>().StartRain();
+            StartGame.SetActive(false);
         }
     }
 

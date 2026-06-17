@@ -34,6 +34,7 @@ public class Rain : MonoBehaviour
 
     public void StartRain() 
     {
+        Debug.Log("OHNOTHERAIN!!");
         isRising = true;
     }
 }
