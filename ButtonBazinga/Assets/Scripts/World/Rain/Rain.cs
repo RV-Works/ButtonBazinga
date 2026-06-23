@@ -60,9 +60,9 @@ public class Rain : MonoBehaviour
 
         waterUiStartHeight = waterUI.GetComponent<RectTransform>().localScale.y;
 
-        startPlayerHeight = Player.transform.localPosition.y;
+        startPlayerHeight = transform.position.y;
 
-        startPlayerUIHeight = PlayerUI.GetComponent<RectTransform>().transform.localPosition.y;
+        startPlayerUIHeight = -endPlayerUIHeight;
 
         Debug.Log(startPlayerUIHeight);
         Debug.Log(startPlayerHeight);
@@ -98,13 +98,13 @@ public class Rain : MonoBehaviour
             currentPlayerUIHeight = Mathf.Lerp(startPlayerUIHeight, endPlayerUIHeight, currentPlayerHeightPercentage);
 
 
+            Debug.Log(currentPlayerHeightPercentage);
 
             currentWaterHeightPercentage = Mathf.InverseLerp(startWaterHeight, endWaterHeight, currentWaterHeight);
 
             waterUiCurrentHeight = Mathf.Lerp(waterUiStartHeight, waterUiEndHeight, currentWaterHeightPercentage);
 
 
-            Debug.Log(currentPlayerUIHeight);
 
             PlayerUiIncrease();
             WaterUiIncrease();
