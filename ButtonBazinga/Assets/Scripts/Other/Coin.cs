@@ -21,6 +21,7 @@ public class Coin : MonoBehaviour
             Destroy(gameObject);
         
             FindAnyObjectByType<GameManager>().CoinCounter();
+
         }
     }
     

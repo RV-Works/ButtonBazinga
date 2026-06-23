@@ -1,3 +1,4 @@
+using System.Runtime.CompilerServices;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -34,6 +35,7 @@ public class GameManager : MonoBehaviour
 
     public void CoinCounter() 
     {
+        Debug.Log("Wow, you got a coin. GREAT JOB.");
         coinCounter++;
         coinText.text = coinCounter.ToString();
     }
