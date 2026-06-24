@@ -30,42 +30,17 @@ public class Rain : MonoBehaviour
 
     [SerializeField] private float waterUiEndHeight;
 
-    [Header("PlayerStats")]
-
-    [SerializeField] private GameObject Player;
-
-    private float startPlayerHeight;
-
-    private float currentPlayerHeight;
-
-    [SerializeField] private float endPlayerHeight;
-
-    private float currentPlayerHeightPercentage;
-
-    [SerializeField] private Image PlayerUI;
-
-    private float startPlayerUIHeight;
-
-    private float currentPlayerUIHeight;
-
-    [SerializeField] private float endPlayerUIHeight;
-
-
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        GameManager.instance.getWaterObject(gameObject);
+
         currentSpeed = riseSpeed;
 
         startWaterHeight = transform.position.y;
 
         waterUiStartHeight = waterUI.GetComponent<RectTransform>().localScale.y;
 
-        startPlayerHeight = transform.position.y;
-
-        startPlayerUIHeight = -endPlayerUIHeight;
-
-        Debug.Log(startPlayerUIHeight);
-        Debug.Log(startPlayerHeight);
     }
 
     // Update is called once per frame
@@ -85,30 +60,11 @@ public class Rain : MonoBehaviour
 
             currentWaterHeight = transform.position.y;
 
-            currentPlayerHeight = Player.transform.position.y;
-
-            //currentHeightPercentage = currentHeight / endHeight * 1;
-            //target = currentHeightPercentage * ((startHeight * endHeight) - startHeight);
-            //Debug.Log(currentHeightPercentage);
-            //target = target + startHeight;
-
-
-            currentPlayerHeightPercentage = Mathf.InverseLerp(startPlayerHeight, endPlayerHeight, currentPlayerHeight);
-
-            currentPlayerUIHeight = Mathf.Lerp(startPlayerUIHeight, endPlayerUIHeight, currentPlayerHeightPercentage);
-
-
-            Debug.Log(currentPlayerHeightPercentage);
-
             currentWaterHeightPercentage = Mathf.InverseLerp(startWaterHeight, endWaterHeight, currentWaterHeight);
 
             waterUiCurrentHeight = Mathf.Lerp(waterUiStartHeight, waterUiEndHeight, currentWaterHeightPercentage);
 
-
-
-            PlayerUiIncrease();
             WaterUiIncrease();
-            //Debug.Log(target);
         }
     }
 
@@ -123,8 +79,4 @@ public class Rain : MonoBehaviour
         waterUI.GetComponent<RectTransform>().localScale = new Vector3(waterUI.GetComponent<RectTransform>().localScale.x, waterUiCurrentHeight, waterUI.GetComponent<RectTransform>().localScale.z);
     }
 
-    private void PlayerUiIncrease()
-    {
-        PlayerUI.GetComponent<RectTransform>().localPosition = new Vector3(PlayerUI.GetComponent<RectTransform>().localPosition.x, currentPlayerUIHeight, PlayerUI.GetComponent<RectTransform>().localPosition.z);
-    }
 }

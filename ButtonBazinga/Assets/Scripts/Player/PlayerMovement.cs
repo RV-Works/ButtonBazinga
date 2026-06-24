@@ -30,6 +30,11 @@ public class PlayerMovement : MonoBehaviour
         lockedPlayerPosition = transform.position;
     }
 
+    private void Start()
+    {
+        GameManager.instance.getPlayerObject(gameObject);
+    }
+
     private void Update()
     {
         OnKeyDown();

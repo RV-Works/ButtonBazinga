@@ -24,6 +24,7 @@ public class Needle : MonoBehaviour
             FindAnyObjectByType<Rain>().StartRain();
             RainDrops.SetActive(true);
             flashImage.startFlash(0.5f, 1f, Color.red);
+            Debug.Log("Ends");
         }
         
     }
