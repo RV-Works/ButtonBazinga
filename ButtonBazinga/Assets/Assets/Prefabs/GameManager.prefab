@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5320773254174505440}
   - component: {fileID: 763173821904775221}
+  - component: {fileID: 8759878901019979119}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -48,3 +49,16 @@ MonoBehaviour:
   StartGame: {fileID: 0}
   coinText: {fileID: 0}
   coinCounter: 0
+--- !u!114 &8759878901019979119
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8051480763957294183}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cc815b63b7332d43bb49dfb6bbe998d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Pausescreen
+  pauseMenuUI: {fileID: 0}
