@@ -23,6 +23,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform playerVisual;
     public bool isGrappling = false;
 
+    [SerializeField] private Animator animator;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -75,6 +77,10 @@ public class PlayerMovement : MonoBehaviour
     {
         float x = context.ReadValue<Vector2>().x;
         moveInput = new Vector2(x, 0f);
+
+        animator.SetFloat("X Walk", x);
+        animator.SetFloat("X 2nd Walk", x);
+        Debug.Log(x);
     }
 
     public System.Action onJumpEvent;
