@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] private Animator animator;
 
+    private float x_Movement;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
@@ -75,13 +77,20 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        float x = context.ReadValue<Vector2>().x;
-        moveInput = new Vector2(x, 0f);
+        x_Movement = context.ReadValue<Vector2>().x;
+        moveInput = new Vector2(x_Movement, 0f);
 
-        animator.SetFloat("AnimationSpeed", 2);
-        animator.SetFloat("X Walk", x);
-        animator.SetFloat("X 2nd Walk", x);
-        Debug.Log(x);
+        if(x_Movement != 0 && isGrounded)
+        {
+            animator.SetFloat("AnimationSpeed", 2);
+        }
+        else if(isGrounded && x_Movement == 0)
+        {
+            animator.SetFloat("AnimationSpeed", 1);
+        }
+        animator.SetFloat("X Walk", x_Movement);
+        animator.SetFloat("X 2nd Walk", x_Movement);
+        Debug.Log(x_Movement);
     }
 
     public System.Action onJumpEvent;
@@ -153,7 +162,14 @@ public class PlayerMovement : MonoBehaviour
         {
             isGrounded = true;
             animator.SetBool("Grounded", true);
-            animator.SetFloat("AnimationSpeed", 1);
+            if(x_Movement != 0)
+            {
+                animator.SetFloat("AnimationSpeed", 2);
+            }
+            else
+            {
+                animator.SetFloat("AnimationSpeed", 1);
+            }
         }
 
         if (collision.gameObject.CompareTag("Water"))
