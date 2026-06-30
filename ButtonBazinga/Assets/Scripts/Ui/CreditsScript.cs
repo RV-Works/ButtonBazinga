@@ -23,7 +23,7 @@ public class CreditsScript : MonoBehaviour
 
     IEnumerator ReturnToMainMenu()
     {
-        yield return new WaitForSeconds(30f);
+        yield return new WaitForSeconds(29f);
         SceneManager.LoadScene("StartingScreen");
     }
 }
