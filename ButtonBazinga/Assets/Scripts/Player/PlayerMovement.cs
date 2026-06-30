@@ -78,6 +78,7 @@ public class PlayerMovement : MonoBehaviour
         float x = context.ReadValue<Vector2>().x;
         moveInput = new Vector2(x, 0f);
 
+        animator.SetFloat("AnimationSpeed", 2);
         animator.SetFloat("X Walk", x);
         animator.SetFloat("X 2nd Walk", x);
         Debug.Log(x);
@@ -91,9 +92,13 @@ public class PlayerMovement : MonoBehaviour
         {
             onJumpEvent?.Invoke();
 
+
             if (isGrounded == true)
             {
                 rb.AddForce(Vector3.up * jumpHeight, ForceMode.Impulse);
+                Debug.Log("Test");
+                animator.SetFloat("AnimationSpeed", 3);
+                animator.SetBool("Grounded", false);
                 isGrounded = false;
             }
         }
@@ -147,6 +152,8 @@ public class PlayerMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+            animator.SetBool("Grounded", true);
+            animator.SetFloat("AnimationSpeed", 1);
         }
 
         if (collision.gameObject.CompareTag("Water"))
@@ -175,6 +182,7 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             playerVisual.localRotation = Quaternion.Euler(0f, 180f, 0f);
+            animator.SetFloat("Animation Speed", 1);
         }
     }
 }
