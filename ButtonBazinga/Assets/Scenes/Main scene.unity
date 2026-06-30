@@ -970,6 +970,55 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 5083964814670065521, guid: 941eacced95a4474c8684823cb913ba1, type: 3}
   m_PrefabInstance: {fileID: 778850015}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &564872767
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 564872769}
+  - component: {fileID: 564872768}
+  m_Layer: 0
+  m_Name: Global Volume
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &564872768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564872767}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 1
+  blendDistance: 0
+  weight: 0.99976
+  sharedProfile: {fileID: 11400000, guid: 947c6119c55a06548815a7002cb327f4, type: 2}
+--- !u!4 &564872769
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 564872767}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -1.4924585, y: 8.6708355, z: 4.294584}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &582734881 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2578757800983788027, guid: be3738cab336ba0488a910e96dd7a66e, type: 3}
@@ -5106,6 +5155,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cc815b63b7332d43bb49dfb6bbe998d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Pausescreen
+--- !u!1 &1301323375 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 473392900570178067, guid: 301270ede50f97749be8ce148bda65f3, type: 3}
+  m_PrefabInstance: {fileID: 4703462518684785262}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1301323377
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1301323375}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 172515602e62fb746b5d573b38a5fe58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Core.Runtime::UnityEngine.Rendering.Volume
+  m_IsGlobal: 1
+  priority: 0
+  blendDistance: 0
+  weight: 1
+  sharedProfile: {fileID: 11400000, guid: 947c6119c55a06548815a7002cb327f4, type: 2}
 --- !u!1001 &1319789768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8858,10 +8929,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6593379878524860011, guid: 301270ede50f97749be8ce148bda65f3, type: 3}
+      propertyPath: m_RendererIndex
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6593379878524860011, guid: 301270ede50f97749be8ce148bda65f3, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 473392900570178067, guid: 301270ede50f97749be8ce148bda65f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1301323377}
   m_SourcePrefab: {fileID: 100100000, guid: 301270ede50f97749be8ce148bda65f3, type: 3}
 --- !u!1001 &5145918164742021827
 PrefabInstance:
@@ -8945,6 +9027,7 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 396383613}
+  - {fileID: 564872769}
   - {fileID: 1969570803}
   - {fileID: 1339696633}
   - {fileID: 2024263625}
