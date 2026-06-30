@@ -230,6 +230,7 @@ MonoBehaviour:
   fallGravityMultiplier: 5
   playerVisual: {fileID: 3262066162231735639}
   isGrappling: 0
+  animator: {fileID: 0}
 --- !u!114 &7361813345858716360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -256,7 +257,7 @@ Animator:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7035552705578576368}
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
+  m_Avatar: {fileID: 9000000, guid: 010747f6fd079264b8c74e351226ef89, type: 3}
   m_Controller: {fileID: 9100000, guid: 2ae9553a4b12173409ebf7f484a61697, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0

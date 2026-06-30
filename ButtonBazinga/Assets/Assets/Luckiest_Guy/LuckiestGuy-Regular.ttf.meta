@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 80c19aa3421e4344a86dcc823b76ed2e
+guid: b15fe449b48285c4e9fb2522809a82ce
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Kids Magazine
+  - Luckiest Guy
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
