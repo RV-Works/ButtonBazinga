@@ -1,0 +1,155 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2800523139530152257
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3208449898136066243}
+  m_Layer: 0
+  m_Name: Coin Object
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3208449898136066243
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2800523139530152257}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.626, y: 1.208785, z: 6.74}
+  m_LocalScale: {x: 3.73, y: 3.730001, z: 3.730001}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1302162303946411921}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &2662225896607378364
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3208449898136066243}
+    m_Modifications:
+    - target: {fileID: 2786383685624946498, guid: 939078135dc582641952a07be1c1b024, type: 3}
+      propertyPath: m_Materials.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2786383685624946498, guid: 939078135dc582641952a07be1c1b024, type: 3}
+      propertyPath: 'm_Materials.Array.data[1]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 069fc33c73cd9d94f9b2006914c75b9d, type: 2}
+    - target: {fileID: 2786383685624946498, guid: 939078135dc582641952a07be1c1b024, type: 3}
+      propertyPath: 'm_Materials.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 069fc33c73cd9d94f9b2006914c75b9d, type: 2}
+    - target: {fileID: 3954184586145145901, guid: 939078135dc582641952a07be1c1b024, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954184586145145901, guid: 939078135dc582641952a07be1c1b024, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954184586145145901, guid: 939078135dc582641952a07be1c1b024, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954184586145145901, guid: 939078135dc582641952a07be1c1b024, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954184586145145901, guid: 939078135dc582641952a07be1c1b024, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954184586145145901, guid: 939078135dc582641952a07be1c1b024, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954184586145145901, guid: 939078135dc582641952a07be1c1b024, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954184586145145901, guid: 939078135dc582641952a07be1c1b024, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954184586145145901, guid: 939078135dc582641952a07be1c1b024, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954184586145145901, guid: 939078135dc582641952a07be1c1b024, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954184586145145901, guid: 939078135dc582641952a07be1c1b024, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954184586145145901, guid: 939078135dc582641952a07be1c1b024, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3954184586145145901, guid: 939078135dc582641952a07be1c1b024, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4443862347998690967, guid: 939078135dc582641952a07be1c1b024, type: 3}
+      propertyPath: m_Name
+      value: Coin 01
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4443862347998690967, guid: 939078135dc582641952a07be1c1b024, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1008333761480821586}
+  m_SourcePrefab: {fileID: 100100000, guid: 939078135dc582641952a07be1c1b024, type: 3}
+--- !u!4 &1302162303946411921 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 3954184586145145901, guid: 939078135dc582641952a07be1c1b024, type: 3}
+  m_PrefabInstance: {fileID: 2662225896607378364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1826743031291778347 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4443862347998690967, guid: 939078135dc582641952a07be1c1b024, type: 3}
+  m_PrefabInstance: {fileID: 2662225896607378364}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1773428102 &1008333761480821586
+ParentConstraint:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826743031291778347}
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Weight: 1
+  m_TranslationAtRest: {x: -0.2425, y: 1.208785, z: 6.6132}
+  m_RotationAtRest: {x: -90, y: 0, z: 0}
+  m_TranslationOffsets:
+  - {x: 0, y: 0, z: 0}
+  m_RotationOffsets:
+  - {x: 0, y: 0, z: 0}
+  m_AffectTranslationX: 1
+  m_AffectTranslationY: 1
+  m_AffectTranslationZ: 0
+  m_AffectRotationX: 1
+  m_AffectRotationY: 1
+  m_AffectRotationZ: 1
+  m_Active: 1
+  m_IsLocked: 1
+  m_Sources:
+  - sourceTransform: {fileID: 3208449898136066243}
+    weight: 1
