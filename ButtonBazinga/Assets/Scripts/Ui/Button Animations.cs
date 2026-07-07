@@ -8,7 +8,6 @@ public class ButtonAnimations : MonoBehaviour
     [SerializeField] private float increaseSize;
 
     [SerializeField] private float increaseSizeSpeed;
-
     private void Start()
     {
         startScale = transform.localScale;
@@ -16,6 +15,7 @@ public class ButtonAnimations : MonoBehaviour
     public void StartMenuButtonEnter()
     {
         gameObject.transform.DOScale(new Vector3(startScale.x + increaseSize, startScale.y + increaseSize, startScale.z + increaseSize), increaseSizeSpeed);
+        Debug.Log("Increase");
     }
 
     public void StartMenuButtonExit()

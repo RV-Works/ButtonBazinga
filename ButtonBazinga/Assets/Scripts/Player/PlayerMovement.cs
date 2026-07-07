@@ -109,6 +109,7 @@ public class PlayerMovement : MonoBehaviour
                 animator.SetFloat("AnimationSpeed", 3);
                 animator.SetBool("Grounded", false);
                 isGrounded = false;
+                AudioManager.instance.Play("Jump", 1);
             }
         }
     }

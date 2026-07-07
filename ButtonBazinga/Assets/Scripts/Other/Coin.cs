@@ -21,6 +21,7 @@ public class Coin : MonoBehaviour
             Destroy(gameObject);
         
             GameManager.instance.CoinCounter();
+            AudioManager.instance.Play("Coin", 1);
         }
     }
     
