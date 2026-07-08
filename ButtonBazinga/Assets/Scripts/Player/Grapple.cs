@@ -38,7 +38,7 @@ public class Grapple : MonoBehaviour
             Vector3 currentGlobalPoint = grapplePointRef.TransformPoint(localHitPoint);
             joint.connectedAnchor = currentGlobalPoint;
 
-            // Pull the player towards the grapple point
+            // player gets put under that thingy
             joint.maxDistance = Mathf.MoveTowards(joint.maxDistance, 0f, pullSpeed * Time.deltaTime);
 
             if (Vector3.Distance(transform.position, currentGlobalPoint) > Range)
@@ -46,7 +46,7 @@ public class Grapple : MonoBehaviour
                 StopGrapple();
             }
 
-            // Slowly rotate the map so the player swings under the grapple point
+            // map turns
             if (!stopAutoRotate)
             {
                 float xDiff = currentGlobalPoint.x - transform.position.x;
@@ -83,7 +83,7 @@ public class Grapple : MonoBehaviour
                 joint.connectedAnchor = hit.point;
 
                 float distanceFromPoint = Vector3.Distance(transform.position, hit.point);
-
+                
                 joint.maxDistance = distanceFromPoint * 0.8f;
                 joint.minDistance = distanceFromPoint * 0.25f;
 
@@ -94,7 +94,7 @@ public class Grapple : MonoBehaviour
                 if (ropeVisual == null)
                 {
                     ropeVisual = GameObject.CreatePrimitive(PrimitiveType.Cylinder);
-                    Destroy(ropeVisual.GetComponent<Collider>()); // No collision for the rope
+                    Destroy(ropeVisual.GetComponent<Collider>()); 
                 }
                 ropeVisual.SetActive(true);
 
@@ -128,11 +128,8 @@ public class Grapple : MonoBehaviour
         Vector3 dir = endPos - startPos;
         float distance = dir.magnitude;
 
-        // Position the cylinder in the middle
         ropeVisual.transform.position = startPos + dir / 2f;
-        // Orient the cylinder to point from start to end
         ropeVisual.transform.up = dir;
-        // Scale the cylinder to match the distance and make it thin
         ropeVisual.transform.localScale = new Vector3(0.05f, distance / 2f, 0.05f);
     }
 

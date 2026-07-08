@@ -37,7 +37,7 @@ public class Flash : MonoBehaviour
     {
         while(currentAmountOfTimes < maxAmountOfTimes)
         {
-            //in
+            //flash appears
             float FlashInDuration = secondsForOneFlash / 2;
             for (float  t = 0; t < FlashInDuration; t += Time.deltaTime)
             {
@@ -46,7 +46,7 @@ public class Flash : MonoBehaviour
                 image.color = colorthisFrame;
                 yield return null;
             }
-            //out
+            //flash goes and gets the milk 
             float FlashOutDuration = secondsForOneFlash / 2;
             for (float t = 0; t < FlashOutDuration; t += Time.deltaTime)
             {
